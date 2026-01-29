@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -12,12 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class JobController {
 
     @Autowired
-    private JobManager jobManager;
+    private JobService jobService;
 
-    @PostMapping("/submit")
-     ResponseEntity<String> startJob(@RequestBody String starter) {
-
-        }
+    @PostMapping("/start")
+    ResponseEntity<String> startJob() {
+        String id = jobService.startJob();
+        return ResponseEntity.ok(id);
     }
-
 }

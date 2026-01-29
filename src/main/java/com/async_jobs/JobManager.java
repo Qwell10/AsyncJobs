@@ -34,8 +34,4 @@ public class JobManager {
         });
         return id;
     }
-
-    private int setProgress(int progress) {
-
-    }
 }
