@@ -1,11 +1,15 @@
 package com.async_jobs.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.function.Consumer;
 
-@Data
+/*
+@Getter //Lombok doesent work, i think i tried everything :(
+@Setter
+*/
 public class Job {
 
     //final - value must be set and can't be empty and value can't be changed
@@ -27,5 +31,33 @@ public class Job {
         this.createdAt = LocalDateTime.now();
         this.status = JobStatus.PENDING;
         this.progress = 0;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public JobStatus getStatus() {
+        return status;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public Consumer<Job> getAction() {
+        return action;
+    }
+
+    public void setStatus(JobStatus status) {
+        this.status = status;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
     }
 }

@@ -38,4 +38,8 @@ public class JobManager {
         });
         return id;
     }
+
+    public Job getJob(String id) {
+        return jobs.get(id);
+    }
 }
