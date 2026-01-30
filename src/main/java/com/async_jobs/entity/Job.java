@@ -1,4 +1,4 @@
-package com.async_jobs;
+package com.async_jobs.entity;
 
 import lombok.Data;
 

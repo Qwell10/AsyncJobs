@@ -1,4 +1,7 @@
-package com.async_jobs;
+package com.async_jobs.service;
+
+import com.async_jobs.entity.Job;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 import java.util.UUID;
@@ -7,8 +10,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 
-import static com.async_jobs.JobStatus.*;
+import static com.async_jobs.entity.JobStatus.*;
 
+@Service
 public class JobManager {
 
     private final Map<String, Job> jobs = new ConcurrentHashMap<>();

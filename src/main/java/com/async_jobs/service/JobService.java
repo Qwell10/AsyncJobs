@@ -1,5 +1,6 @@
-package com.async_jobs;
+package com.async_jobs.service;
 
+import com.async_jobs.entity.Job;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
